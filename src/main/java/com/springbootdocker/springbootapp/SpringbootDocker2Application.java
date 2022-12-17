@@ -11,7 +11,7 @@ public class SpringbootDocker2Application {
 	@GetMapping
 	public String getmsg()
 	{
-		return "this is my first docker containers";
+		return "this is my first docker containers this is again building jar form spring and git";
 	}
 	public static void main(String[] args) {
 		SpringApplication.run(SpringbootDocker2Application.class, args);
