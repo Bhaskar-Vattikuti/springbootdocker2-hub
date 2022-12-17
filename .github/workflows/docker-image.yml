@@ -1,0 +1,22 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: |
+        docker build -t springbootdocker2.jar target/
+        docker login -u bhaskarvattikuti -p dckr_pat_N57S7SGX1HWn-gFzAiYlcoy3xZY
+        docker tag springbootdocker2.jar bhaskarvattikuti/test2
+        docker push bhaskarvattikuti/test2
